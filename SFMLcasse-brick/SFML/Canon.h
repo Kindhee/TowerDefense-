@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObject.h"
+#include <iostream>
 #include <SFML/Graphics.hpp>
 
 class Canon

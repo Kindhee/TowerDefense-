@@ -47,7 +47,7 @@ int GameWindow::game() {
     sf::Clock clock;
     float delta_time = 0;
 
-    int limit_ball = 10;
+    int limit_ball = 1;
     int limit_canon = 3;
 
     int min;
@@ -134,11 +134,6 @@ int GameWindow::game() {
                                 tab_brick.erase(tab_brick.begin() + j);
                                 j--;
                             }
-
-                           /* ???????????
-                           tab_balls.erase(tab_balls.begin() + i);
-                            i--;
-                            */
                         }
                     }
                 }

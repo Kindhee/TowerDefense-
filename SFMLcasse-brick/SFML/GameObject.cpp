@@ -45,7 +45,7 @@ GameObject::GameObject(int x, int y, int radius, const char* img) {
 	this->y = y;
 	this->radius = radius;
 	this->img = img;
-	speed = 2000;
+	speed = 500;
 	vectX = 0;
 	vectY = 0;
 

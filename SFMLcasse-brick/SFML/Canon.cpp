@@ -21,5 +21,5 @@ void Canon::getVect(sf::Shape* shape, sf::RenderWindow* window, sf::Shape* other
 
 	shape->rotate(angle - init_angle);
 	init_angle = angle;
-
+	std::cout << other_pos.x << std::endl;
 }

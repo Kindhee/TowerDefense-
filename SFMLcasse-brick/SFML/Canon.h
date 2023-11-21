@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <cmath>
 
 class Canon
 {

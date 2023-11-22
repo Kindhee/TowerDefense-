@@ -71,8 +71,10 @@ int GameWindow::game() {
 
     sf::Clock clock;
     float delta_time = 0;
+    float ball_spawn_time = 0;
 
     int limit_ball = 1;
+    float shoot_delay = 0.5;
     int limit_canon = 20;
 
     int min;
@@ -135,7 +137,8 @@ int GameWindow::game() {
         }
       
         if (tab_brick.size() != 0) {
-            if (tab_balls.size() < limit_ball) {
+            if (ball_spawn_time > shoot_delay) {
+                ball_spawn_time = 0;
                 min = tab_brick[0]->y;
                 index = 0;
                 for (int i = 0; i < tab_brick.size(); i++) {
@@ -253,6 +256,7 @@ int GameWindow::game() {
         window->display();
 
         delta_time = clock.restart().asSeconds();
+        ball_spawn_time += delta_time;
 
     }
 

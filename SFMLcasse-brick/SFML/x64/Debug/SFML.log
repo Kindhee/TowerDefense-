@@ -1,21 +1,21 @@
 ﻿  GameWindow.cpp
-C:\Users\romas\source\repos\TowerDefense\SFMLcasse-brick\SFML\GameWindow.cpp(9,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\romas\source\repos\TowerDefense\SFMLcasse-brick\SFML\GameWindow.cpp(121,76): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\SFML\GameWindow.cpp(9,15): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\SFML\GameWindow.cpp(123,76): warning C4244: 'argument' : conversion de 'T' en 'float', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\romas\source\repos\TowerDefense\SFMLcasse-brick\SFML\GameWindow.cpp(121,63): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\SFML\GameWindow.cpp(123,63): warning C4244: 'argument' : conversion de 'T' en 'float', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\romas\source\repos\TowerDefense\SFMLcasse-brick\SFML\GameWindow.cpp(125,117): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\romas\source\repos\TowerDefense\SFMLcasse-brick\SFML\GameWindow.cpp(125,78): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\romas\source\repos\TowerDefense\SFMLcasse-brick\SFML\GameWindow.cpp(139,35): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\romas\source\repos\TowerDefense\SFMLcasse-brick\SFML\GameWindow.cpp(153,87): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\romas\source\repos\TowerDefense\SFMLcasse-brick\SFML\GameWindow.cpp(153,70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\romas\source\repos\TowerDefense\SFMLcasse-brick\SFML\GameWindow.cpp(155,41): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\romas\source\repos\TowerDefense\SFMLcasse-brick\SFML\GameWindow.cpp(182,98): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\romas\source\repos\TowerDefense\SFMLcasse-brick\SFML\GameWindow.cpp(182,77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  SFML.vcxproj -> C:\Users\romas\source\repos\TowerDefense\SFMLcasse-brick\x64\Debug\SFML.exe
+C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\SFML\GameWindow.cpp(127,117): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\SFML\GameWindow.cpp(127,78): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\SFML\GameWindow.cpp(142,35): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\SFML\GameWindow.cpp(156,87): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\SFML\GameWindow.cpp(156,70): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\SFML\GameWindow.cpp(158,41): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\SFML\GameWindow.cpp(185,98): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\SFML\GameWindow.cpp(185,77): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+  SFML.vcxproj -> C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\x64\Debug\SFML.exe

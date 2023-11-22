@@ -20,7 +20,7 @@ vector<Brick*> LevelCreater::loadTable(int level) {
     std::string row;
 
     int X = 200;
-    int Y = -400;
+    int Y = -800;
 
     while (std::getline(levelTxt, row))
     {
@@ -28,15 +28,15 @@ vector<Brick*> LevelCreater::loadTable(int level) {
         {
             if (row[j] == '1')
             {
-                list.push_back(new Brick(X, Y, 60, 60, ennemy_one, 2, 2, 50));
+                list.push_back(new Brick(X, Y, 60, 60, ennemy_one, 2, 3, 50));
             }
             if (row[j] == '2')
             {
-                list.push_back(new Brick(X, Y, 60, 60, ennemy_two, 5, 5, 25));
+                list.push_back(new Brick(X, Y, 60, 60, ennemy_two, 5, 5, 35));
             }
             if (row[j] == '3')
             {
-                list.push_back(new Brick(X, Y, 60, 60, ennemy_three, 100, 25, 10));
+                list.push_back(new Brick(X, Y, 60, 60, ennemy_three, 100, 25, 30));
             }
             X += 60;
         }

@@ -1,3 +1,2 @@
-﻿  Canon.cpp
-C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\SFML\Canon.cpp(22,14): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-  SFML.vcxproj -> C:\Users\tboda\Documents\GitHub\TowerDefense\TowerDefense-\SFMLcasse-brick\x64\Debug\SFML.exe
+﻿  LevelCreater.cpp
+  SFML.vcxproj -> C:\Users\user\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\x64\Debug\SFML.exe

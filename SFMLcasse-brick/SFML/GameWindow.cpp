@@ -74,7 +74,7 @@ int GameWindow::game() {
     float ball_spawn_time = 0;
 
     int limit_ball = 1;
-    float shoot_delay = 0.5;
+    float shoot_delay = 0.25;
     int limit_canon = 20;
 
     int min;

@@ -1,5 +1,6 @@
 #include "Canon.h"
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 
 Canon::Canon() {
@@ -18,7 +19,7 @@ void Canon::getVect(sf::Shape* shape, sf::RenderWindow* window, sf::Shape* other
 	vect_x = opposite;
 	vect_y = near;
 
-	float angle = -atan(opposite / near) * 180 / 3.14;
+	float angle = -atan(opposite / near) * 180 / 3.14 + (other_pos.y > canon_origin.y?180:0);
 
 	shape->setRotation(angle - 90);
 }

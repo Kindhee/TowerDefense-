@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Mouse.hpp>
+#include <string>
+#include <sstream>
 #include <stdio.h>
 #include <iostream>
 #include <ctime>
@@ -11,7 +13,6 @@
 #include "Ball.h"
 #include "Brick.h"
 #include "LevelCreater.h"
-#include "Bonus.h"
 using namespace std;
 
 class GameWindow

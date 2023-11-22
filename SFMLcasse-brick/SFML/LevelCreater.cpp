@@ -2,10 +2,14 @@
 
 LevelCreater::LevelCreater() {
 
-	img_brick_blue = "img/blue-full.png";
-	img_brick_red = "img/red-full.png";
-	img_brick_yellow = "img/yellow-full.png";
+	ennemy_one = "img/dragon_type1.png";
+    ennemy_two = "img/dragon_type2.png";
+    ennemy_three = "img/girl_type3.png";
 
+
+    tile_one = "img/tile_one.png";
+    tile_two = "img/tile_two.png";
+    tile_three = "img/tile_three.png";
 }
 
 vector<Brick*> LevelCreater::loadTable(int level) {
@@ -15,76 +19,63 @@ vector<Brick*> LevelCreater::loadTable(int level) {
     std::ifstream levelTxt(path);
     std::string row;
 
-    int X = 50;
-    int Y = 100;
+    int X = 200;
+    int Y = -400;
 
     while (std::getline(levelTxt, row))
     {
-        for (int j = 0; j < 12; j++)
+        for (int j = 0; j < 11; j++)
         {
             if (row[j] == '1')
             {
-                list.push_back(new Brick(X, Y, 80, 25, img_brick_blue, 1));
+                list.push_back(new Brick(X, Y, 60, 60, ennemy_one, 2, 2, 50));
             }
             if (row[j] == '2')
             {
-                list.push_back(new Brick(X, Y, 80, 25, img_brick_red, 3));
+                list.push_back(new Brick(X, Y, 60, 60, ennemy_two, 5, 5, 25));
             }
             if (row[j] == '3')
             {
-                list.push_back(new Brick(X, Y, 80, 25, img_brick_yellow, 5));
+                list.push_back(new Brick(X, Y, 60, 60, ennemy_three, 100, 25, 10));
             }
-            X += 80;
+            X += 60;
         }
-        X = 50;
+        X = 200;
         Y += 25;
     }
     return list;
 }
 
+vector<Brick*> LevelCreater::loadGrid(int level) {
+    vector<Brick*> list;
+    std::string path = "grid/" + std::to_string(level) + ".txt";
 
-//vector<Brick*> LevelCreater::loadTable(int level) {
-//		vector<Brick*> list;
-//		if (level == 1) {
-//			int X = 50;
-//			int Y = 100;
-//			for (int j = 0; j < 15; j++) {
-//				for (int i = 0; i < 11; i++) {
-//					list.push_back(new Brick(X, Y, 80, 25, img_brick_blue, 1));
-//					X += 80;
-//				}
-//				X = 50;
-//				Y += 30;
-//			}
-//			return list;
-//		}		
-//		
-//		if (level == 2) {
-//			int X = 50;
-//			int Y = 100;
-//			for (int j = 0; j < 15; j++) {
-//				for (int i = 0; i < 11; i++) {
-//					list.push_back(new Brick(X, Y, 80, 25, img_brick_yellow, 2));
-//					X += 80;
-//				}
-//				X = 50;
-//				Y += 30;
-//			}
-//			return list;
-//		}		
-//		
-//		if (level == 3) {
-//			int X = 50;
-//			int Y = 100;
-//			for (int j = 0; j < 15; j++) {
-//				for (int i = 0; i < 11; i++) {
-//					list.push_back(new Brick(X, Y, 80, 25, img_brick_red, 3));
-//					X += 80;
-//				}
-//				X = 50;
-//				Y += 30;
-//			}
-//			return list;
-//		}
-//}
+    std::ifstream levelTxt(path);
+    std::string row;
 
+    int X = 0;
+    int Y = 0;
+
+    while (std::getline(levelTxt, row))
+    {
+        for (int j = 0; j < 11; j++)
+        {
+            if (row[j] == '1')
+            {
+                list.push_back(new Brick(X, Y, 100, 100, tile_one, 0));
+            }
+            if (row[j] == '2')
+            {
+                list.push_back(new Brick(X, Y, 100, 100, tile_two, 1));
+            }
+            if (row[j] == '3')
+            {
+                list.push_back(new Brick(X, Y, 100, 100, tile_three, 0));
+            }
+            X += 100;
+        }
+        X = 0;
+        Y += 100;
+    }
+    return list;
+}

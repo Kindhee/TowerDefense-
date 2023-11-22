@@ -5,13 +5,13 @@
 using namespace std;
 
 
-GameObject::GameObject(int x, int y, int width, int height, const char* img) {
+GameObject::GameObject(int x, int y, int width, int height, const char* img, float speed) {
 	this->x = x;
 	this->y = y;
 	this->width = width;
 	this->height = height;
 	this->img = img;
-	speed = 500;
+	this->speed = speed;
 	vectX = 0;
 	vectY = 0;
 	
@@ -25,18 +25,23 @@ GameObject::GameObject(int x, int y, int width, int height, const char* img) {
 	shape->setTexture(texture);
 }
 
-GameObject::GameObject(int x, int y, int width, int height) {
+GameObject::GameObject(int x, int y, int width, int height, const char* img) {
 	this->x = x;
 	this->y = y;
 	this->width = width;
 	this->height = height;
-	speed = 500;
+	this->img = img;
 	vectX = 0;
 	vectY = 0;
 
+	sf::Texture* texture = new sf::Texture;
+	if (!texture->loadFromFile(img)) {
+		cout << "failed to load image";
+	}
+
 	shape = new sf::RectangleShape(sf::Vector2f(width, height));
 	shape->setPosition(x, y);
-	shape->setFillColor(sf::Color::Red);
+	shape->setTexture(texture);
 }
 
 
@@ -58,20 +63,6 @@ GameObject::GameObject(int x, int y, int radius, const char* img) {
 	shape = new sf::CircleShape(radius);
 	shape->setPosition(x, y);
 	shape->setTexture(texture);
-}
-
-
-GameObject::GameObject(int x, int y, int radius) {
-	this->x = x;
-	this->y = y;
-	this->radius = radius;
-	speed = 500;
-	vectX = 0;
-	vectY = 0;
-
-	shape = new sf::CircleShape(radius);
-	shape->setPosition(x, y);
-	shape->setFillColor(sf::Color::Blue);
 }
 
 int GameObject::random(int max_number_chance) {

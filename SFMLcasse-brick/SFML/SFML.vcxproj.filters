@@ -36,9 +36,6 @@
     <ClCompile Include="LevelCreater.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Bonus.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h">
@@ -57,9 +54,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LevelCreater.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Bonus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

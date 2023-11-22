@@ -11,15 +11,14 @@ void Canon::getVect(sf::Shape* shape, sf::RenderWindow* window, sf::Shape* other
 	sf::Vector2f other_pos = other_shape->getPosition();
 	sf::Vector2f canon_origin = shape->getPosition();
 
+
 	float opposite = other_pos.x - canon_origin.x;
 	float near = other_pos.y - canon_origin.y;
 
 	vect_x = opposite;
 	vect_y = near;
 
-	float angle = -atan(opposite / near) * 200 / 3.14;
+	float angle = -atan(opposite / near) * 180 / 3.14;
 
-	shape->rotate(angle - init_angle);
-	init_angle = angle;
-
+	shape->setRotation(angle - 90);
 }

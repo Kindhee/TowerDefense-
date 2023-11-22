@@ -6,8 +6,6 @@ class Canon
 {
 public:
 
-	float init_angle;
-
 	float vect_x, vect_y;
 	
 	Canon();

@@ -7,7 +7,7 @@ Canon::Canon() {
 
 }
 
-void Canon::getVect(sf::Shape* shape, sf::RenderWindow* window, sf::Shape* other_shape) {
+void Canon::getVect(sf::Shape* shape, sf::Shape* other_shape) {
 
 	sf::Vector2f other_pos = other_shape->getPosition();
 	sf::Vector2f canon_origin = shape->getPosition();

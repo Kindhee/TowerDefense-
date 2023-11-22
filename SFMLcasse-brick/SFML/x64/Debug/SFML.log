@@ -1,2 +1,26 @@
-﻿  LevelCreater.cpp
-  SFML.vcxproj -> C:\Users\user\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\x64\Debug\SFML.exe
+﻿  Canon.cpp
+C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\SFML\Canon.cpp(22,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  GameController.cpp
+C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\SFML\GameController.cpp(9,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\SFML\GameController.cpp(123,76): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\SFML\GameController.cpp(123,63): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\SFML\GameController.cpp(127,117): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\SFML\GameController.cpp(127,78): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\SFML\GameController.cpp(142,35): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\SFML\GameController.cpp(156,87): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\SFML\GameController.cpp(156,70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\SFML\GameController.cpp(158,41): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\SFML\GameController.cpp(185,98): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\SFML\GameController.cpp(185,77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  SFML.cpp
+  Window.cpp
+  Generating Code...
+  SFML.vcxproj -> C:\Users\romas\source\repos\Kindhee\TowerDefense-\SFMLcasse-brick\x64\Debug\SFML.exe

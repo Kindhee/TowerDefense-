@@ -10,7 +10,7 @@ public:
 	
 	Canon();
 
-	void getVect(sf::Shape* shape, sf::RenderWindow* window, sf::Shape* other_shape);
+	void getVect(sf::Shape* shape, sf::Shape* other_shape);
 
 };
 

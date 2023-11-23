@@ -106,23 +106,27 @@ int GameController::game() {
         }
 
         // 
-        // DEBUT BOUCLE STATE -- IDLE -- ON DEPLACE LA SOURIS SUR L'ECRAN
-        //
-
-        // 
-        // STATE MACHINE ( ON CLIQUE )
+        // DEBUT COMMAND PATTERN -- SOURIS BOUGE -- ON DEPLACE LA SOURIS SUR L'ECRAN
         //
 
         sf::Event oEvent;
         while (window_manager.window->pollEvent(oEvent))
         {
+
+            // COMMAND PATTERN -- ON FERME LA WINDOW --
             if (oEvent.type == sf::Event::Closed) {
+                //
                 window_manager.window->close();
             }
 
+            // COMMAND PATTERN -- ON CLIQUE --
             if (oEvent.type == sf::Event::MouseButtonPressed) {
+                //
                 switch (oEvent.mouseButton.button) {
+
+                    // COMMAND PATTERN -- ON CLIQUE GAUCHE --
                 case sf::Mouse::Left:
+                    //
 
                     sf::Vector2i mouse_pos = mouse.getPosition(*window_manager.window);
                     cout << "x" << mouse_pos.x << "y" << mouse_pos.y << endl;
@@ -132,11 +136,6 @@ int GameController::game() {
                         if (tab_map[i]->mouseOnBrick(mouse_pos.x, mouse_pos.y) == true && tab_canon.size() < limit_canon && coins >= 100) {
 
                             sf::Vector2i mouse_pos = mouse.getPosition(*window_manager.window);
-
-
-                            // 
-                            // STATE MACHINE -- ON POSE UNE TOUR --
-                            //
 
                             tab_canon.push_back(new GameObject(tab_map[i]->x + tab_map[i]->width / 2, tab_map[i]->y + tab_map[i]->height / 2, 100, 100, img_canon));
 
@@ -149,7 +148,17 @@ int GameController::game() {
                 }
             }
         }
-      
+
+        // 
+        // FIN COMMAND PATTERN -- SOURIS BOUGE -- ON REVIENS AU DEBUT
+        //
+
+
+        //
+        // DEBUT STATE MACHINE TOWER -- IDLE / EST CONSTRUITE --
+        //
+
+        // PREPARATION DU STATE "VISE" 
         if (tab_brick.size() != 0) {
             if (ball_spawn_time > shoot_delay) {
                 ball_spawn_time = 0;
@@ -160,24 +169,35 @@ int GameController::game() {
                         index = i;
                     }
                 }
+                //
+
 
                 if (tab_canon.size() != 0) {
                     for (int i = 0; i < tab_canon.size(); i++) {
                         if (tab_brick[index]->y >= 0) {
 
-                            canon_manager.getVect(tab_canon[i]->shape, tab_brick[index]->shape);
 
+                            // STATE MACHINE TOWER -- VISE --
+                            canon_manager.getVect(tab_canon[i]->shape, tab_brick[index]->shape);
+                            //
+
+                            // STATE MACHINE TOWER -- TIRE --
                             tab_balls.push_back(new Ball(tab_canon[i]->x, tab_canon[i]->y, 10, img_ball));
 
                             float norme = sqrt(pow(canon_manager.vect_x, 2) + pow(canon_manager.vect_y, 2));
 
                             tab_balls[tab_balls.size() - 1]->vectX = canon_manager.vect_x / norme;
                             tab_balls[tab_balls.size() - 1]->vectY = canon_manager.vect_y / norme;
+                            //
                         }
                     }
                 }
             }
         }
+
+        //
+        // FIN STATE MACHINE TOWER RETOUR A -- IDLE --
+        //
 
         for (int i = 0; i < tab_brick.size(); i++) {
             tab_brick[i]->moveDirection(delta_time,0,1,tab_brick[i]->speed);
@@ -236,8 +256,25 @@ int GameController::game() {
         str_level << "level :" << count_level;
         text_level.setString(str_level.str());
 
+        sf::Texture endTexture;
+        if (count_level >= 4 || health < 0) {
+            tab_map.clear();
+            tab_balls.clear();
+            tab_brick.clear();
+            tab_canon.clear();
+            if (count_level >= 4) {
+                endTexture.loadFromFile("img/Victory.png");
+            }
+
+            if (health < 0) {
+                endTexture.loadFromFile("img/GameOver.png");
+
+            }
+        }
+        sf::Sprite endSprite(endTexture);
+
         //DRAW
-        window_manager.window->clear();
+        window_manager.window->clear(sf::Color::White);
 
         if (tab_map.size() != 0) {
             for (int i = 0; i < tab_map.size(); i++) {
@@ -262,6 +299,7 @@ int GameController::game() {
                 window_manager.draw(tab_canon[i]->shape);
             }
         }
+        window_manager.draw(endSprite);
 
         window_manager.drawText(text_coins);
         window_manager.drawText(text_health);

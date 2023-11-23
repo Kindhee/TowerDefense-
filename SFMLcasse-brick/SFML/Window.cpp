@@ -6,6 +6,10 @@ Window::Window() {
 
 }
 
+void Window::draw(sf::Sprite sprite) {
+	window->draw(sprite);
+}
+
 void Window::draw(sf::Shape* shape) {
 	window->draw(*shape);
 }

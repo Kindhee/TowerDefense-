@@ -203,12 +203,25 @@ int GameController::game() {
                             //
 
                             // STATE MACHINE TOWER -- TIRE --
-                            tab_balls.push_back(new Ball(tab_canon[i]->x, tab_canon[i]->y, 10, img_ball));
+                            if (tab_canon[i]->img == "img/canon.png") {
+                                tab_balls.push_back(new Ball(tab_canon[i]->x, tab_canon[i]->y, 10, img_ball));
 
-                            float norme = sqrt(pow(canon_manager.vect_x, 2) + pow(canon_manager.vect_y, 2));
+                                float norme = sqrt(pow(canon_manager.vect_x, 2) + pow(canon_manager.vect_y, 2));
 
-                            tab_balls[tab_balls.size() - 1]->vectX = canon_manager.vect_x / norme;
-                            tab_balls[tab_balls.size() - 1]->vectY = canon_manager.vect_y / norme;
+                                tab_balls[tab_balls.size() - 1]->vectX = canon_manager.vect_x / norme;
+                                tab_balls[tab_balls.size() - 1]->vectY = canon_manager.vect_y / norme;
+                            }
+                            if (tab_canon[i]->img == "img/canonLevel2.png") {
+
+                                float norme = sqrt(pow(canon_manager.vect_x, 2) + pow(canon_manager.vect_y, 2));
+                                tab_balls.push_back(new Ball(tab_canon[i]->x - 50, tab_canon[i]->y, 10, img_ball));
+                                tab_balls.push_back(new Ball(tab_canon[i]->x + 50, tab_canon[i]->y, 10, img_ball));
+
+                                tab_balls[tab_balls.size() - 1]->vectX = (canon_manager.vect_x - 50) / norme;
+                                tab_balls[tab_balls.size() - 1]->vectY = canon_manager.vect_y / norme;
+                                tab_balls[tab_balls.size() - 2]->vectX = (canon_manager.vect_x + 50) / norme;
+                                tab_balls[tab_balls.size() - 2]->vectY = (canon_manager.vect_y) / norme;
+                            }
                             //
                         }
                     }

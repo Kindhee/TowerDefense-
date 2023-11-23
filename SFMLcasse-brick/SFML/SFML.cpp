@@ -1,8 +1,8 @@
-#include "GameWindow.h"
+#include "GameController.h"
 
 int main(int argc, char** argv)
 {
-	GameWindow init;
+	GameController init;
 	init.game();
 }
 

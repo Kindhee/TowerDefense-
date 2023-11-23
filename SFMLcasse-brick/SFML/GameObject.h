@@ -11,10 +11,9 @@ public:
 
 	sf::Shape* shape;
 
+	GameObject(int x, int y, int width, int height, const char* img, float speed);
 	GameObject(int x, int y, int width, int height, const char* img);
-	GameObject(int x, int y, int size1, int size2);
 	GameObject(int x, int y, int radius, const char* img);
-	GameObject(int x, int y, int radius);
 
 	int random(int max_number_chance);
 

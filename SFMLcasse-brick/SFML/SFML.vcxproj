@@ -130,23 +130,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="Bonus.cpp" />
-    <ClCompile Include="Brick.cpp" />
-    <ClCompile Include="Canon.cpp" />
+    <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Tour.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="GameController.cpp" />
     <ClCompile Include="LevelCreater.cpp" />
     <ClCompile Include="SFML.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ball.h" />
-    <ClInclude Include="Bonus.h" />
-    <ClInclude Include="Brick.h" />
-    <ClInclude Include="Canon.h" />
+    <ClInclude Include="Projectile.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Tour.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="GameWindow.h" />
+    <ClInclude Include="GameController.h" />
     <ClInclude Include="LevelCreater.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

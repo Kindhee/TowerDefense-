@@ -49,6 +49,7 @@ int GameController::game() {
     
     // init canon
     const char* img_canon = "img/canon.png";
+    const char* img_canon2 = "img/canonLevel2.png";
     Canon canon_manager;
     //
 
@@ -121,6 +122,7 @@ int GameController::game() {
 
             // COMMAND PATTERN -- ON CLIQUE --
             if (oEvent.type == sf::Event::MouseButtonPressed) {
+                    sf::Vector2i mouse_pos = mouse.getPosition(*window_manager.window);
                 //
                 switch (oEvent.mouseButton.button) {
 
@@ -128,7 +130,6 @@ int GameController::game() {
                 case sf::Mouse::Left:
                     //
 
-                    sf::Vector2i mouse_pos = mouse.getPosition(*window_manager.window);
                     cout << "x" << mouse_pos.x << "y" << mouse_pos.y << endl;
 
                     for (int i = 0; i < tab_map.size(); i++) {
@@ -138,6 +139,26 @@ int GameController::game() {
                             sf::Vector2i mouse_pos = mouse.getPosition(*window_manager.window);
 
                             tab_canon.push_back(new GameObject(tab_map[i]->x + tab_map[i]->width / 2, tab_map[i]->y + tab_map[i]->height / 2, 100, 100, img_canon));
+
+                            tab_canon[tab_canon.size() - 1]->setOriginToCenter();
+                            tab_canon[tab_canon.size() - 1]->rotate(45);
+
+                            coins -= 100;
+                        }
+                    }
+
+                case sf::Mouse::Right:
+                    //
+
+                    cout << "x" << mouse_pos.x << "y" << mouse_pos.y << endl;
+
+                    for (int i = 0; i < tab_map.size(); i++) {
+
+                        if (tab_map[i]->mouseOnBrick(mouse_pos.x, mouse_pos.y) == true && tab_canon.size() < limit_canon && coins >= 100) {
+
+                            sf::Vector2i mouse_pos = mouse.getPosition(*window_manager.window);
+
+                            tab_canon.push_back(new GameObject(tab_map[i]->x + tab_map[i]->width / 2, tab_map[i]->y + tab_map[i]->height / 2, 100, 100, img_canon2));
 
                             tab_canon[tab_canon.size() - 1]->setOriginToCenter();
                             tab_canon[tab_canon.size() - 1]->rotate(45);
